@@ -39,6 +39,10 @@ export const experience = [
     initiatives: [
       {
         title: "Intelligent Feedback Analysis System using LLMs",
+        summary:
+          "Built an LLM-powered feedback intelligence pipeline for sentiment and issue classification at production scale.",
+        impact: "95%+ reduction in manual review effort",
+        tags: ["LLM Classification", "Databricks", "Snowflake", "Power BI"],
         points: [
           "Engineered an incremental Snowflake-to-Databricks pipeline with daily batch ingestion, cleaning, and preprocessing.",
           "Designed few-shot prompts to classify sentiment into Positive, Neutral, and Developmental while supporting multi-label taxonomy mapping from L1 to L4.",
@@ -49,6 +53,10 @@ export const experience = [
       },
       {
         title: "Hotel Booking Propensity Model using Behavioral Segmentation",
+        summary:
+          "Modeled high-propensity hotel customers through clustering and similarity-based targeting on CDP data.",
+        impact: "30% conversion uplift, 20% CTOR improvement",
+        tags: ["K-Means", "Segmentation", "CDP", "Precision Marketing"],
         points: [
           "Used CDP data such as flight frequency, booking lead time, trip purpose, annual trip count, and spending patterns to identify likely hotel bookers.",
           "Applied K-Means clustering to discover 10 behavioral segments across existing hotel bookers.",
@@ -58,6 +66,10 @@ export const experience = [
       },
       {
         title: "LLM-Based Cargo Commodity Code Classification and Revenue Leakage Detection",
+        summary:
+          "Combined LLM classification with rate-engine logic to detect mislabelled cargo codes and quantify leakage risk.",
+        impact: "95% classification accuracy",
+        tags: ["LLaMA 4", "Rate Engine", "Revenue Analytics", "Batch Inference"],
         points: [
           "Identified that roughly 20 percent of cargo shipment records had mislabelled commodity codes, driving incorrect rates and revenue leakage.",
           "Built an incremental ingestion pipeline for new cargo bookings and designed structured prompts with priority tiers, confidence-aware outputs, and domain rules.",
@@ -68,6 +80,10 @@ export const experience = [
       },
       {
         title: "ASK_PRISM: Conversational Text-to-SQL Intelligence System",
+        summary:
+          "Designed a governed natural-language analytics layer so business users could query data without writing SQL.",
+        impact: "Expanded self-serve analytics across multiple domains",
+        tags: ["Text-to-SQL", "Semantic Models", "Databricks Genie", "Snowflake Cortex"],
         points: [
           "Built an enterprise self-serve analytics experience that lets business teams query data in natural language instead of relying on manual SQL support.",
           "Launched ASK_PRISM_CDP on Databricks Genie Spaces for customer and behavioral analytics in production.",
@@ -84,6 +100,9 @@ export const research = {
   title: "Limits on using LLMs for predictions",
   subtitle: "M.Tech Thesis | Guide: Prof. Nisheeth Srivastava",
   period: "June 2023 - May 2024",
+  summary:
+    "Studied whether LLMs can reliably model human decision-making across repeated cognitive tasks and realistic behavioral variance.",
+  tags: ["LLM Evaluation", "Behavioral Modeling", "Experimental Design"],
   points: [
     "Empirically studied how well LLMs can predict human decision-making and challenged claims that they are reliable cognitive models.",
     "Developed a novel test-retest experimental framework across three cognitive tasks to compare model predictions against real human behavior.",
@@ -96,6 +115,10 @@ export const projects = [
   {
     title: "Air Pollutant Prediction using Sensor Data",
     meta: "CS771 | Guide: Prof. Purushottam Kar | Aug 2022 - Nov 2022",
+    summary:
+      "Predicted O3 and NO2 from sensor signals using linear and non-linear models, with KNN emerging as the best option.",
+    outcome: "KNN improved MAE to 3.1 for O3 and 1.6 for NO2",
+    tags: ["Regression", "KNN", "Sensor Data", "Feature Engineering"],
     points: [
       "Built a linear regression model to predict O3 and NO2 from voltage features, achieving MAE of 5.63 and 6.3 respectively.",
       "Extended the feature set with temperature, humidity, and timestamps for non-linear modeling.",
@@ -105,6 +128,10 @@ export const projects = [
   {
     title: "Sampling and Reconstruction of Volume Data",
     meta: "CS661 | Guide: Prof. Soumya Dutta | Jan 2023 - Apr 2023",
+    summary:
+      "Explored random sampling and interpolation strategies to reconstruct 3D scientific data efficiently.",
+    outcome: "Reached signal-to-noise ratios up to 40",
+    tags: ["3D Data", "Interpolation", "Sampling", "Scientific Computing"],
     points: [
       "Implemented simple random sampling over the Isabel 3D dataset at variable sample percentages.",
       "Reconstructed volume data using nearest-neighbor and linear interpolation methods.",
@@ -184,6 +211,7 @@ export const services = [
     title: "LLM Solution Design",
     summary:
       "Build prompt-driven and agent-assisted systems for classification, extraction, routing, summarization, and business-facing AI workflows.",
+    cue: "Production-grade LLM workflows",
     points: [
       "Few-shot prompt design and evaluation",
       "Multi-label taxonomy classification workflows",
@@ -194,6 +222,7 @@ export const services = [
     title: "Text-to-SQL and Self-Serve Analytics",
     summary:
       "Design natural-language analytics experiences that let business users retrieve insights without depending on SQL specialists.",
+    cue: "Governed analytics for business teams",
     points: [
       "Semantic model curation",
       "Business glossary and query grounding",
@@ -204,6 +233,7 @@ export const services = [
     title: "Data Science and Predictive Modeling",
     summary:
       "Develop practical ML systems for segmentation, forecasting, scoring, and behavioral modeling with a strong focus on measurable business outcomes.",
+    cue: "Models tied to business impact",
     points: [
       "Clustering and customer segmentation",
       "Regression and classification pipelines",
@@ -214,6 +244,7 @@ export const services = [
     title: "Data Pipelines and Workflow Automation",
     summary:
       "Create production data flows that move reliably from ingestion to transformation, inference, and business consumption.",
+    cue: "Reliable data-to-decision systems",
     points: [
       "Snowflake and Databricks pipeline orchestration",
       "Scheduled jobs and incremental processing",
@@ -224,6 +255,7 @@ export const services = [
     title: "Dashboarding and Decision Intelligence",
     summary:
       "Turn complex operational data into reports and dashboards that leadership and business teams can actually use to act.",
+    cue: "Decision-ready reporting surfaces",
     points: [
       "Power BI dashboards for operational monitoring",
       "KPI storytelling and drill-down reporting",
@@ -234,6 +266,7 @@ export const services = [
     title: "Senior Automation Developer",
     summary:
       "Streamlining Quality Assurance through Automated Testing, Test Scripting, Framework design, CI integration, and continuous improvement.",
+    cue: "Maintainable QA automation systems",
     points: [
       "Test scripting and automation strategy",
       "Reusable framework design and maintenance",
@@ -245,6 +278,8 @@ export const services = [
 export const platformDepth = [
   {
     title: "Databricks AI/BI, Genie, and Workflows",
+    summary:
+      "Strong fit for governed AI analytics, scheduled LLM workflows, and business-facing data products.",
     description:
       "Databricks positions AI/BI Genie as a natural-language interface tailored to your organization’s terminology and data, while Jobs and scheduled workflows orchestrate production-grade recurring pipelines. That lines up closely with my work in business self-serve analytics, batch inference, and operational AI systems.",
     tags: [
@@ -257,6 +292,8 @@ export const platformDepth = [
   },
   {
     title: "Snowflake Cortex Analyst and Semantic Views",
+    summary:
+      "Well aligned with semantic text-to-SQL, business metrics governance, and trusted self-serve analytics.",
     description:
       "Snowflake describes Cortex Analyst as a managed text-to-SQL capability grounded in semantic models and semantic views so business users can ask questions without writing SQL. This mirrors the way I think about governed self-serve analytics, semantic modeling, and reliable business-facing data products.",
     tags: [
@@ -269,6 +306,8 @@ export const platformDepth = [
   },
   {
     title: "Power BI Reporting for Actionable Operations",
+    summary:
+      "Useful for converting complex operational signals into executive-ready reporting surfaces.",
     description:
       "Microsoft frames dashboards as single-page highlight views and reports as interactive multi-page analytics experiences built on semantic models. That matches how I deliver decision-ready dashboards for sentiment monitoring, revenue leakage analysis, and business review workflows.",
     tags: [
@@ -281,6 +320,8 @@ export const platformDepth = [
   },
   {
     title: "Applied ML with Scikit-learn and the Python Stack",
+    summary:
+      "A practical foundation for experimentation, feature work, and high-signal model comparison.",
     description:
       "Scikit-learn emphasizes practical predictive data analysis across classification, regression, and clustering. Combined with Pandas, NumPy, and visualization tooling, it supports the type of experimentation and model comparison work I have done in segmentation, pollutant prediction, and behavioral modeling.",
     tags: [
