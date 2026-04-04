@@ -79,37 +79,7 @@ Preview the production build:
 npm run preview
 ```
 
-## Environment Variables
 
-Create a `.env.local` file in the project root:
-
-```bash
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
-VITE_TURNSTILE_SITE_KEY=your-cloudflare-turnstile-site-key
-```
-
-Example values are included in [.env.example](./.env.example).
-
-## Form Setup
-
-### Formspree
-
-1. Create a form in [Formspree](https://formspree.io/).
-2. Copy your form endpoint.
-3. Add it to `.env.local` as `VITE_FORMSPREE_ENDPOINT`.
-4. Use the Formspree dashboard to review submissions.
-
-### Cloudflare Turnstile
-
-1. Create a widget in [Cloudflare Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile).
-2. Add `localhost` for local testing and your deployed domain for production.
-3. Copy the `Site Key` into `.env.local` as `VITE_TURNSTILE_SITE_KEY`.
-4. Keep the `Secret Key` private.
-5. In Formspree form settings, enable Cloudflare Turnstile and paste the secret key there.
-
-## Security Notes
-
-This site is static, so there is no private server code in the repo. The contact form is hardened, but no frontend-only form is fully "hack proof."
 
 Current protections include:
 
@@ -121,29 +91,6 @@ Current protections include:
 - disabled repeat submit during in-flight requests
 - input validation for name, email, phone, and message
 
-Important:
-
-- Never commit `.env.local`
-- Never expose your Turnstile `Secret Key` in frontend code
-- `VITE_*` values are public in the browser, so only put safe public values there
-
-## Deployment
-
-The easiest free deployment option is Vercel.
-
-### Deploy to Vercel
-
-1. Push this project to GitHub.
-2. Import the repository into [Vercel](https://vercel.com/).
-3. Add the environment variables in the Vercel project settings:
-   - `VITE_FORMSPREE_ENDPOINT`
-   - `VITE_TURNSTILE_SITE_KEY`
-4. Deploy.
-
-Vercel should detect Vite automatically and use:
-
-- Build Command: `npm run build`
-- Output Directory: `dist`
 
 ## Content Sources
 
