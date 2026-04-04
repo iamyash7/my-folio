@@ -1,4 +1,6 @@
+import { Sparkles } from "lucide-react";
 import { services } from "../data/portfolio";
+import { ExpandableCard } from "./ExpandableCard";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -19,24 +21,27 @@ export function ServicesSection() {
             <Reveal
               key={service.title}
               delay={0.05 * index}
-              className="rounded-[1.65rem] border border-white/10 bg-white/[0.03] p-6"
             >
-              <p className="text-xs uppercase tracking-[0.28em] text-sand/74">
-                Service
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold leading-8 text-white">
-                {service.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-mist/76">
-                {service.summary}
-              </p>
-              <ul className="mt-5 space-y-3 text-sm leading-7 text-mist/74">
-                {service.points.map((point) => (
-                  <li key={point} className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0">
-                    {point}
-                  </li>
-                ))}
-              </ul>
+              <ExpandableCard
+                eyebrow="Service"
+                title={service.title}
+                summary={service.summary}
+                badges={[service.cue]}
+              >
+                <ul className="space-y-3">
+                  {service.points.map((point) => (
+                    <li
+                      key={point}
+                      className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0"
+                    >
+                      <span className="inline-flex items-start gap-3">
+                        <Sparkles size={14} className="mt-1 shrink-0 text-sand/80" />
+                        <span>{point}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </ExpandableCard>
             </Reveal>
           ))}
         </div>

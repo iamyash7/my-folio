@@ -1,4 +1,5 @@
 import { platformDepth, skills } from "../data/portfolio";
+import { ExpandableCard } from "./ExpandableCard";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -22,25 +23,14 @@ function SkillGroup({ title, items }) {
 
 function PlatformCard({ item }) {
   return (
-    <div className="rounded-[1.65rem] border border-white/10 bg-white/[0.03] p-6">
-      <p className="text-xs uppercase tracking-[0.28em] text-sand/74">
-        Platform Depth
-      </p>
-      <h3 className="mt-4 text-2xl font-semibold leading-8 text-white">
-        {item.title}
-      </h3>
-      <p className="mt-4 text-sm leading-7 text-mist/76">{item.description}</p>
-      <div className="mt-5 flex flex-wrap gap-3">
-        {item.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full border border-white/10 bg-ink/45 px-4 py-2 text-sm text-mist/76"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-    </div>
+    <ExpandableCard
+      eyebrow="Platform Depth"
+      title={item.title}
+      summary={item.summary}
+      badges={item.tags}
+    >
+      <p>{item.description}</p>
+    </ExpandableCard>
   );
 }
 

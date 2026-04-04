@@ -1,4 +1,5 @@
 import { projects, research } from "../data/portfolio";
+import { ExpandableCard } from "./ExpandableCard";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -14,49 +15,54 @@ export function ProjectsSection() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-          <Reveal className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-steel/70 to-ink/80 p-8">
-            <p className="text-xs uppercase tracking-[0.32em] text-sand/78">
-              Thesis Research
-            </p>
-            <h3 className="mt-4 font-display text-4xl text-white">
-              {research.title}
-            </h3>
-            <p className="mt-3 text-sm uppercase tracking-[0.2em] text-mist/58">
-              {research.subtitle}
-            </p>
-            <p className="mt-2 text-sm text-mist/58">{research.period}</p>
-            <ul className="mt-8 space-y-4 text-sm leading-7 text-mist/78">
-              {research.points.map((point) => (
-                <li key={point} className="border-t border-white/8 pt-4 first:border-t-0 first:pt-0">
-                  {point}
-                </li>
-              ))}
-            </ul>
+        <div className="mt-12 grid gap-6 xl:grid-cols-[1.05fr_0.95fr_0.95fr]">
+          <Reveal className="xl:col-span-1">
+            <ExpandableCard
+              eyebrow="Thesis Research"
+              title={research.title}
+              caption={`${research.subtitle} | ${research.period}`}
+              summary={research.summary}
+              badges={research.tags}
+            >
+              <ul className="space-y-3">
+                {research.points.map((point) => (
+                  <li
+                    key={point}
+                    className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </ExpandableCard>
           </Reveal>
 
-          <div className="grid gap-6">
-            {projects.map((project, index) => (
-              <Reveal
-                key={project.title}
-                delay={0.08 + index * 0.06}
-                className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6"
+          {projects.map((project, index) => (
+            <Reveal
+              key={project.title}
+              delay={0.08 + index * 0.06}
+            >
+              <ExpandableCard
+                eyebrow="Selected Project"
+                title={project.title}
+                caption={project.meta}
+                summary={project.summary}
+                badges={project.tags}
+                metric={project.outcome}
               >
-                <p className="text-xs uppercase tracking-[0.32em] text-sand/74">
-                  Selected Project
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold leading-8 text-white">
-                  {project.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-mist/58">{project.meta}</p>
-                <ul className="mt-5 space-y-3 text-sm leading-7 text-mist/76">
+                <ul className="space-y-3">
                   {project.points.map((point) => (
-                    <li key={point}>{point}</li>
+                    <li
+                      key={point}
+                      className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0"
+                    >
+                      {point}
+                    </li>
                   ))}
                 </ul>
-              </Reveal>
-            ))}
-          </div>
+              </ExpandableCard>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

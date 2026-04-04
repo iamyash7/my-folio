@@ -1,4 +1,5 @@
 import { experience } from "../data/portfolio";
+import { ExpandableCard } from "./ExpandableCard";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -41,21 +42,25 @@ export function ExperienceSection() {
               <Reveal
                 key={initiative.title}
                 delay={0.12 + index * 0.06}
-                className="rounded-[1.5rem] border border-white/10 bg-ink/40 p-6"
               >
-                <p className="text-sm uppercase tracking-[0.24em] text-sand/68">
-                  Initiative {String(index + 1).padStart(2, "0")}
-                </p>
-                <h4 className="mt-4 text-xl font-semibold leading-8 text-white">
-                  {initiative.title}
-                </h4>
-                <ul className="mt-5 space-y-3 text-sm leading-7 text-mist/74">
-                  {initiative.points.map((point) => (
-                    <li key={point} className="border-t border-white/6 pt-3 first:border-t-0 first:pt-0">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <ExpandableCard
+                  eyebrow={`Initiative ${String(index + 1).padStart(2, "0")}`}
+                  title={initiative.title}
+                  summary={initiative.summary}
+                  badges={initiative.tags}
+                  metric={initiative.impact}
+                >
+                  <ul className="space-y-3">
+                    {initiative.points.map((point) => (
+                      <li
+                        key={point}
+                        className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0"
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </ExpandableCard>
               </Reveal>
             ))}
           </div>
